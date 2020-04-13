@@ -1,1 +1,1 @@
-web: gunicorn RentExpress.wsgi
+gunicorn RentExpress.wsgi
