@@ -128,7 +128,6 @@ jQuery(document).on('ready', function ($) {
         smartSpeed: 600,
         mouseDrag: true,
         touchDrag: false,
-        center: true,
         responsive: {
             0: {
                 items: 1
