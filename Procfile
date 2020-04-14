@@ -1,1 +1,1 @@
-web: gunicorn RentExpress.wsgi
+web: gunicorn shop.wsgi --log-file -
