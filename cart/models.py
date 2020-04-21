@@ -1,16 +1,16 @@
 from django.db import models
-from product.models import Variation
+from product.models import variations
 from user.models import CustomerUser
 
 # Create your models here.
 
-class Cart(models.Model):
+class cart(models.Model):
     user = models.ForeignKey(CustomerUser, on_delete=models.CASCADE)
     create_at = models.DateTimeField(auto_now_add=True)
-    update = models.DateTimeField(auto_now=True)
+    update_at = models.DateTimeField(auto_now=True)
 
-class CartItem(models.Model):
-    cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
-    item = models.ForeignKey(Variation, on_delete=models.CASCADE)
-    quantity = models.IntegerField(default=0)
-
+class cartItem(models.Model):
+    cart = models.ForeignKey(cart, on_delete=models.CASCADE)
+    item = models.ForeignKey(variations, on_delete=models.CASCADE)
+    quantityOrdered = models.IntegerField(default=0)
+    priceEach = models.IntegerField(default=0)
