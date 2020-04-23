@@ -42,8 +42,7 @@
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
 	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
-	          <li class="nav-item"><a href="car.html" class="nav-link">Our Car</a></li>
+	          <li class="nav-item"><a href="car.html" class="nav-link">Our Vehicle</a></li>
 	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 	        </ul>
@@ -52,27 +51,26 @@
 	  </nav>
     <!-- END nav -->
     
-    <div class="hero-wrap" style="background-image: url('static/homepage/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+    <div class="hero-wrap" style="background-image: url('static/homepage/images/bg_1.png');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text justify-content-start align-items-center">
           <div class="col-lg-6 col-md-6 ftco-animate d-flex align-items-end">
           	<div class="text">
-	            <h1 class="mb-4">Now <span>It's easy for you</span> <span>rent a car</span></h1>
-	            <p style="font-size: 18px;">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts</p>
+	            <h1 class="mb-4">Now, <span>It's easy for you</span> <span>rent a vehicle!</span></h1>
             </div>
           </div>
           <div class="col-lg-2 col"></div>
           <div class="col-lg-4 col-md-6 mt-0 mt-md-5 d-flex">
           	<form action="#" class="request-form ftco-animate">
-          		<h2>Make your trip</h2>
+          		<h2>Pick your vehicle</h2>
 	    				<div class="form-group">
-	    					<label for="" class="label">Pick-up location</label>
-	    					<input type="text" class="form-control" placeholder="City, Airport, Station, etc">
+	    					<label for="" class="label">Vehicle</label>
+	    					<input type="text" class="form-control" placeholder="Car/Motobike/Bicycle">
 	    				</div>
 	    				<div class="form-group">
-	    					<label for="" class="label">Drop-off location</label>
-	    					<input type="text" class="form-control" placeholder="City, Airport, Station, etc">
+	    					<label for="" class="label">Location</label>
+	    					<input type="text" class="form-control" placeholder="Hanoi/Hochiminh">
 	    				</div>
 	    				<div class="d-flex">
 	    					<div class="form-group mr-2">
@@ -84,10 +82,7 @@
 	                <input type="text" class="form-control" id="book_off_date" placeholder="Date">
 	              </div>
               </div>
-              <div class="form-group">
-                <label for="" class="label">Pick-up time</label>
-                <input type="text" class="form-control" id="time_pick" placeholder="Time">
-              </div>
+
 	            <div class="form-group">
 	              <input type="submit" value="Search Vehicle" class="btn btn-primary py-3 px-4">
 	            </div>
@@ -106,22 +101,15 @@
 		        		<div class="row">
 		        			<div class="col-lg align-items-end">
 		        				<div class="form-group">
-		        					<label for="#">Select Model</label>
+		        					<label for="vehicle">Select Vehicle</label>
 		        					<div class="form-field">
 		          					<div class="select-wrap">
 		                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-		                      <select name="" id="" class="form-control">
-		                      	<option value="">Select Model</option>
-		                        <option value="">Model 1</option>
-		                        <option value="">Model 2</option>
-		                        <option value="">Model 3</option>
-		                        <option value="">Model 4</option>
-		                        <option value="">Model 5</option>
-		                        <option value="">Model 6</option>
-		                        <option value="">Model 7</option>
-		                        <option value="">Model 8</option>
-		                        <option value="">Model 9</option>
-		                        <option value="">Model 10</option>
+		                      <select name="" id="vehicle" class="form-control">
+		                      	<option value="">Select Vehicle</option>
+		                        <option value="">Car</option>
+		                        <option value="">Motobike</option>
+		                        <option value="">Bicycle</option>
 		                      </select>
 		                    </div>
 				              </div>
@@ -129,11 +117,11 @@
 		        			</div>
 		        			<div class="col-lg align-items-end">
 		        				<div class="form-group">
-		        					<label for="#">Select Brand</label>
+		        					<label for="brand">Select Brand</label>
 		        					<div class="form-field">
 		          					<div class="select-wrap">
 		                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-		                      <select name="" id="" class="form-control">
+		                      <select name="" id="brand" class="form-control">
 		                      	<option value="">Select Brand</option>
 		                        <option value="">Brand 1</option>
 		                        <option value="">Brand 2</option>
@@ -150,7 +138,7 @@
 				              </div>
 			              </div>
 		        			</div>
-		        			<div class="col-lg align-items-end">
+		        			<!-- <div class="col-lg align-items-end">
 		        				<div class="form-group">
 		        					<label for="#">Year Model</label>
 		        					<div class="form-field">
@@ -168,26 +156,22 @@
 		                    </div>
 				              </div>
 			              </div>
-		        			</div>
+		        			</div> -->
 		        			<div class="col-lg align-items-end">
 		        				<div class="form-group">
-		        					<label for="#">Price Limit</label>
+		        					<label for="pricelimit">Price Limit</label>
 		        					<div class="form-field">
 		          					<div class="select-wrap">
 		                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-		                      <select name="" id="" class="form-control">
-		                      	<option value="">$1</option>
-		                        <option value="">$50</option>
-		                        <option value="">$100</option>
-		                        <option value="">$200</option>
-		                        <option value="">$300</option>
-		                        <option value="">$400</option>
-		                        <option value="">$500</option>
-		                        <option value="">$600</option>
-		                        <option value="">$700</option>
-		                        <option value="">$800</option>
-		                        <option value="">$900</option>
-		                        <option value="">$1000</option>
+		                      <select name="" id="pricelimit" class="form-control">
+		                      	<option value="">Price Limit</option>
+		                        <option value="">100.000đ</option>
+		                        <option value="">500.000đ</option>
+		                        <option value="">1.000.000đ</option>
+		                        <option value="">2.000.000đ</option>
+		                        <option value="">3.000.000đ</option>
+		                        <option value="">5.000.000đ</option>
+		                        <option value="">10.000.000đ</option>
 		                      </select>
 		                    </div>
 				              </div>
@@ -222,9 +206,9 @@
               <div class="media-body py-md-4">
               	<div class="d-flex mb-3 align-items-center">
 	              	<div class="icon"><span class="flaticon-customer-support"></span></div>
-	                <h3 class="heading mb-0 pl-3">24/7 Car Support</h3>
+	                <h3 class="heading mb-0 pl-3">24/7 Support</h3>
                 </div>
-                <p>A small river named Duden flows by their place and supplies it with you</p>
+                <p>Support description</p>
               </div>
             </div>      
           </div>
@@ -235,7 +219,7 @@
 	              	<div class="icon"><span class="flaticon-route"></span></div>
 	                <h3 class="heading mb-0 pl-3">Lots of location</h3>
                 </div>
-                <p>A small river named Duden flows by their place and supplies it with you</p>
+                <p>Hanoi, Hochiminh,...</p>
               </div>
             </div>      
           </div>
@@ -246,7 +230,7 @@
 	              	<div class="icon"><span class="flaticon-online-booking"></span></div>
 	                <h3 class="heading mb-0 pl-3">Reservation</h3>
                 </div>
-                <p>A small river named Duden flows by their place and supplies it with you</p>
+                <p>Reservation description</p>
               </div>
             </div>      
           </div>
@@ -257,7 +241,7 @@
 	              	<div class="icon"><span class="flaticon-rent"></span></div>
 	                <h3 class="heading mb-0 pl-3">Rental Cars</h3>
                 </div>
-                <p>A small river named Duden flows by their place and supplies it with you</p>
+                <p>Fast & Devotion</p>
               </div>
             </div>      
           </div>
@@ -265,12 +249,12 @@
       </div>
     </section>
 
-    <section class="ftco-section">
+    <!-- <section class="ftco-section">
     	<div class="container-fluid px-4">
     		<div class="row justify-content-center">
           <div class="col-md-12 heading-section text-center ftco-animate mb-5">
           	<span class="subheading">What we offer</span>
-            <h2 class="mb-2">Choose Your Car</h2>
+            <h2 class="mb-2">Choose Your Vehicle</h2>
           </div>
         </div>
     		<div class="row">
@@ -278,7 +262,7 @@
     				<div class="car-wrap ftco-animate">
     					<div class="img d-flex align-items-end" style="background-image: url(static/homepage/images/car-1.jpg);">
     						<div class="price-wrap d-flex">
-    							<span class="rate">$25</span>
+    							<span class="rate">1.000.000đ</span>
     							<p class="from-day">
     								<span>From</span>
     								<span>/Day</span>
@@ -296,7 +280,7 @@
     				<div class="car-wrap ftco-animate">
     					<div class="img d-flex align-items-end" style="background-image: url(static/homepage/images/car-2.jpg);">
     						<div class="price-wrap d-flex">
-    							<span class="rate">$25</span>
+    							<span class="rate">1.000.000đ</span>
     							<p class="from-day">
     								<span>From</span>
     								<span>/Day</span>
@@ -314,7 +298,7 @@
     				<div class="car-wrap ftco-animate">
     					<div class="img d-flex align-items-end" style="background-image: url(static/homepage/images/car-3.jpg);">
     						<div class="price-wrap d-flex">
-    							<span class="rate">$25</span>
+    							<span class="rate">1.000.000đ</span>
     							<p class="from-day">
     								<span>From</span>
     								<span>/Day</span>
@@ -332,7 +316,7 @@
     				<div class="car-wrap ftco-animate">
     					<div class="img d-flex align-items-end" style="background-image: url(static/homepage/images/car-4.jpg);">
     						<div class="price-wrap d-flex">
-    							<span class="rate">$25</span>
+    							<span class="rate">1.000.000đ</span>
     							<p class="from-day">
     								<span>From</span>
     								<span>/Day</span>
@@ -351,7 +335,7 @@
     				<div class="car-wrap ftco-animate">
     					<div class="img d-flex align-items-end" style="background-image: url(static/homepage/images/car-5.jpg);">
     						<div class="price-wrap d-flex">
-    							<span class="rate">$25</span>
+    							<span class="rate">1.000.000đ</span>
     							<p class="from-day">
     								<span>From</span>
     								<span>/Day</span>
@@ -369,7 +353,7 @@
     				<div class="car-wrap ftco-animate">
     					<div class="img d-flex align-items-end" style="background-image: url(static/homepage/images/car-6.jpg);">
     						<div class="price-wrap d-flex">
-    							<span class="rate">$25</span>
+    							<span class="rate">1.000.000đ</span>
     							<p class="from-day">
     								<span>From</span>
     								<span>/Day</span>
@@ -387,7 +371,7 @@
     				<div class="car-wrap ftco-animate">
     					<div class="img d-flex align-items-end" style="background-image: url(static/homepage/images/car-7.jpg);">
     						<div class="price-wrap d-flex">
-    							<span class="rate">$25</span>
+    							<span class="rate">1.000.000đ</span>
     							<p class="from-day">
     								<span>From</span>
     								<span>/Day</span>
@@ -405,7 +389,7 @@
     				<div class="car-wrap ftco-animate">
     					<div class="img d-flex align-items-end" style="background-image: url(static/homepage/images/car-8.jpg);">
     						<div class="price-wrap d-flex">
-    							<span class="rate">$25</span>
+    							<span class="rate">1.000.000đ</span>
     							<p class="from-day">
     								<span>From</span>
     								<span>/Day</span>
@@ -422,8 +406,9 @@
     		</div>
     	</div>
     </section>
+	-->
 
-    <section class="ftco-section services-section img" style="background-image: url(static/homepage/images/bg_2.jpg);">
+    <section class="ftco-section services-section img" style="background-image: url(static/homepage/images/bg_2.png);">
     	<div class="overlay"></div>
     	<div class="container">
     		<div class="row justify-content-center mb-5">
@@ -437,8 +422,8 @@
             <div class="media block-6 services services-2">
               <div class="media-body py-md-4 text-center">
               	<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-route"></span></div>
-                <h3>Pick Destination</h3>
-                <p>A small river named Duden flows by their place and supplies it with you</p>
+                <h3>Pick Information</h3>
+                <p>Information about vehicle, location, pick-up date, drop-off date</p>
               </div>
             </div>      
           </div>
@@ -446,8 +431,8 @@
             <div class="media block-6 services services-2">
               <div class="media-body py-md-4 text-center">
               	<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-select"></span></div>
-                <h3>Select Term</h3>
-                <p>A small river named Duden flows by their place and supplies it with you</p>
+                <h3>Choose A Vehicle</h3>
+                <p>Pick a vehicle you want</p>
               </div>
             </div>      
           </div>
@@ -455,8 +440,8 @@
             <div class="media block-6 services services-2">
               <div class="media-body py-md-4 text-center">
               	<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-rent"></span></div>
-                <h3>Choose A Car</h3>
-                <p>A small river named Duden flows by their place and supplies it with you</p>
+                <h3>Receive Car</h3>
+                <p>You can go to the store or book a ship</p>
               </div>
             </div>      
           </div>
@@ -465,7 +450,7 @@
               <div class="media-body py-md-4 text-center">
               	<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-review"></span></div>
                 <h3>Enjoy The Ride</h3>
-                <p>A small river named Duden flows by their place and supplies it with you</p>
+                <p>Be careful and enjoy your ride</p>
               </div>
             </div>      
           </div>
@@ -477,7 +462,7 @@
       <div class="container">
         <div class="row justify-content-center mb-5">
           <div class="col-md-7 text-center heading-section ftco-animate">
-          	<span class="subheading">Testimonial</span>
+          	<span class="subheading">Feedbacks</span>
             <h2 class="mb-3">Happy Clients</h2>
           </div>
         </div>
@@ -486,56 +471,56 @@
             <div class="carousel-testimony owl-carousel ftco-owl">
               <div class="item">
                 <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(static/homepage/images/person_1.jpg)">
+                  <div class="user-img mb-4" style="background-image: url(static/homepage/images/person.png)">
                   </div>
                   <div class="text pt-4">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Roger Scott</p>
-                    <span class="position">Marketing Manager</span>
+                    <p class="mb-4">Devoted service</p>
+                    <p class="name">VTD</p>
+                    <span class="position">Project Manager</span>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(static/homepage/images/person_2.jpg)">
+                  <div class="user-img mb-4" style="background-image: url(static/homepage/images/person.png)">
                   </div>
                   <div class="text pt-4">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Roger Scott</p>
-                    <span class="position">Interface Designer</span>
+                    <p class="mb-4">Devoted service</p>
+                    <p class="name">VTD</p>
+                    <span class="position">Project Manager</span>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(static/homepage/images/person_3.jpg)">
+                  <div class="user-img mb-4" style="background-image: url(static/homepage/images/person.png)">
                   </div>
                   <div class="text pt-4">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Roger Scott</p>
-                    <span class="position">UI Designer</span>
+                    <p class="mb-4">Devoted service</p>
+                    <p class="name">VTD</p>
+                    <span class="position">Project Manager</span>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(static/homepage/images/person_1.jpg)">
+                  <div class="user-img mb-4" style="background-image: url(static/homepage/images/person.png)">
                   </div>
                   <div class="text pt-4">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Roger Scott</p>
-                    <span class="position">Web Developer</span>
+                    <p class="mb-4">Devoted service</p>
+                    <p class="name">VTD</p>
+                    <span class="position">Project Manager</span>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(static/homepage/images/person_1.jpg)">
+                  <div class="user-img mb-4" style="background-image: url(static/homepage/images/person.png)">
                   </div>
                   <div class="text pt-4">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Roger Scott</p>
-                    <span class="position">System Analyst</span>
+                    <p class="mb-4">Devoted service</p>
+                    <p class="name">VTD</p>
+                    <span class="position">Project Manager</span>
                   </div>
                 </div>
               </div>
@@ -548,16 +533,16 @@
 		<section class="ftco-section ftco-no-pt ftco-no-pb">
 			<div class="container">
 				<div class="row no-gutters">
-					<div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(static/homepage/images/about.jpg);">
+					<div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(static/homepage/images/promotion.png);">
 					</div>
 					<div class="col-md-6 wrap-about py-md-5 ftco-animate">
 	          <div class="heading-section mb-5 pl-md-5">
-	          	<span class="subheading">About us</span>
-	            <h2 class="mb-4">Choose A Perfect Car</h2>
+	          	<span class="subheading">Promotion</span>
+	            <h2 class="mb-4">Weekly Specials</h2>
 
-	            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-	            <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
-	            <p><a href="#" class="btn btn-primary">Search Vehicle</a></p>
+	            <p>Enjoy your 2020 summer vacation.</p>
+	            <p>Best offer up to 50%</p>
+	            <p><a href="#" class="btn btn-primary">Rent Vehicle Now</a></p>
 	          </div>
 					</div>
 				</div>
@@ -579,12 +564,12 @@
               </a>
               <div class="text pt-4">
               	<div class="meta mb-3">
-                  <div><a href="#">July. 24, 2019</a></div>
+                  <div><a href="#">April. 01, 2020</a></div>
                   <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 10</a></div>
                 </div>
-                <h3 class="heading mt-2"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <h3 class="heading mt-2"><a href="#">How to choose a car to rent</a></h3>
+                <p>How to choose a car to rent.</p>
               </div>
             </div>
           </div>
@@ -594,27 +579,27 @@
               </a>
               <div class="text pt-4">
               	<div class="meta mb-3">
-                  <div><a href="#">July. 24, 2019</a></div>
+                  <div><a href="#">April. 01, 2020</a></div>
                   <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 15</a></div>
                 </div>
-                <h3 class="heading mt-2"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <h3 class="heading mt-2"><a href="#">How to choose a motobike to rent</a></h3>
+                <p>How to choose a motobike to rent.</p>
               </div>
             </div>
           </div>
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry">
-              <a href="blog-single.html" class="block-20" style="background-image: url('static/homepage/images/image_3.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url('static/homepage/images/image_3.png');">
               </a>
               <div class="text pt-4">
               	<div class="meta mb-3">
-                  <div><a href="#">July. 24, 2019</a></div>
+                  <div><a href="#">April. 01, 2020</a></div>
                   <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 5</a></div>
                 </div>
-                <h3 class="heading mt-2"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <h3 class="heading mt-2"><a href="#">How to choose a bicycle to rent</a></h3>
+                <p>How to choose a bicycle to rent.</p>
               </div>
             </div>
           </div>
@@ -627,8 +612,8 @@
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">About Autoroad</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <h2 class="ftco-heading-2">About Rent Express</h2>
+              <p>We offer fast and devote service</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -665,20 +650,12 @@
             	<h2 class="ftco-heading-2">Have a Questions?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+	                <li><span class="icon icon-map-marker"></span><span class="text">144 Xuan Thuy, Cau Giay, Ha Noi, Viet Nam</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+84 904115999</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">contact@rentexpress.com</span></a></li>
 	              </ul>
 	            </div>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
           </div>
         </div>
       </div>
