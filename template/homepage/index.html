@@ -1,56 +1,6 @@
-<!DOCTYPE html>
+{% extends 'homepage/base.html' %}
 
-{% load static %}
-<html lang="en">
-  <head>
-    <title>Rent Express</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-	<link rel="shortcut icon" type="image/ico" href="{% static 'homepage/images/favicon.png' %}" />
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="{% static 'homepage/css/open-iconic-bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'homepage/css/animate.css' %}">
-    
-    <link rel="stylesheet" href="{% static 'homepage/css/owl.carousel.min.css' %}">
-    <link rel="stylesheet" href="{% static 'homepage/css/owl.theme.default.min.css' %}">
-    <link rel="stylesheet" href="{% static 'homepage/css/magnific-popup.css' %}">
-
-    <link rel="stylesheet" href="{% static 'homepage/css/aos.css' %}">
-
-    <link rel="stylesheet" href="{% static 'homepage/css/ionicons.min.css' %}">
-
-    <link rel="stylesheet" href="{% static 'homepage/css/bootstrap-datepicker.css' %}">
-    <link rel="stylesheet" href="{% static 'homepage/css/jquery.timepicker.css' %}">
-    
-    <link rel="stylesheet" href="{% static 'homepage/css/flaticon.css' %}">
-    <link rel="stylesheet" href="{% static 'homepage/css/icomoon.css' %}">
-    <link rel="stylesheet" href="{% static 'homepage/css/style.css' %}">
-  </head>
-
-  <body>
-    
-	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Rent<span>Express</span></a>
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
-
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="car.html" class="nav-link">Our Vehicle</a></li>
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
-    <!-- END nav -->
-    
+{% block content %}
     <div class="hero-wrap" style="background-image: url('static/homepage/images/bg_1.png');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
@@ -210,7 +160,7 @@
                 </div>
                 <p>Support description</p>
               </div>
-            </div>      
+            </div>
           </div>
           <div class="col-md-3 d-flex align-self-stretch ftco-animate">
             <div class="media block-6 services">
@@ -221,7 +171,7 @@
                 </div>
                 <p>Hanoi, Hochiminh,...</p>
               </div>
-            </div>      
+            </div>
           </div>
           <div class="col-md-3 d-flex align-self-stretch ftco-animate">
             <div class="media block-6 services">
@@ -232,7 +182,7 @@
                 </div>
                 <p>Reservation description</p>
               </div>
-            </div>      
+            </div>
           </div>
           <div class="col-md-3 d-flex align-self-stretch ftco-animate">
             <div class="media block-6 services">
@@ -243,170 +193,11 @@
                 </div>
                 <p>Fast & Devotion</p>
               </div>
-            </div>      
+            </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- <section class="ftco-section">
-    	<div class="container-fluid px-4">
-    		<div class="row justify-content-center">
-          <div class="col-md-12 heading-section text-center ftco-animate mb-5">
-          	<span class="subheading">What we offer</span>
-            <h2 class="mb-2">Choose Your Vehicle</h2>
-          </div>
-        </div>
-    		<div class="row">
-    			<div class="col-md-3">
-    				<div class="car-wrap ftco-animate">
-    					<div class="img d-flex align-items-end" style="background-image: url(static/homepage/images/car-1.jpg);">
-    						<div class="price-wrap d-flex">
-    							<span class="rate">1.000.000đ</span>
-    							<p class="from-day">
-    								<span>From</span>
-    								<span>/Day</span>
-    							</p>
-    						</div>
-    					</div>
-    					<div class="text p-4 text-center">
-    						<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-    						<span>Audi</span>
-    						<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-md-3">
-    				<div class="car-wrap ftco-animate">
-    					<div class="img d-flex align-items-end" style="background-image: url(static/homepage/images/car-2.jpg);">
-    						<div class="price-wrap d-flex">
-    							<span class="rate">1.000.000đ</span>
-    							<p class="from-day">
-    								<span>From</span>
-    								<span>/Day</span>
-    							</p>
-    						</div>
-    					</div>
-    					<div class="text p-4 text-center">
-    						<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-    						<span>Ford</span>
-    						<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-md-3">
-    				<div class="car-wrap ftco-animate">
-    					<div class="img d-flex align-items-end" style="background-image: url(static/homepage/images/car-3.jpg);">
-    						<div class="price-wrap d-flex">
-    							<span class="rate">1.000.000đ</span>
-    							<p class="from-day">
-    								<span>From</span>
-    								<span>/Day</span>
-    							</p>
-    						</div>
-    					</div>
-    					<div class="text p-4 text-center">
-    						<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-    						<span>Cheverolet</span>
-    						<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-md-3">
-    				<div class="car-wrap ftco-animate">
-    					<div class="img d-flex align-items-end" style="background-image: url(static/homepage/images/car-4.jpg);">
-    						<div class="price-wrap d-flex">
-    							<span class="rate">1.000.000đ</span>
-    							<p class="from-day">
-    								<span>From</span>
-    								<span>/Day</span>
-    							</p>
-    						</div>
-    					</div>
-    					<div class="text p-4 text-center">
-    						<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-    						<span>Mercedes</span>
-    						<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-    					</div>
-    				</div>
-    			</div>
-
-    			<div class="col-md-3">
-    				<div class="car-wrap ftco-animate">
-    					<div class="img d-flex align-items-end" style="background-image: url(static/homepage/images/car-5.jpg);">
-    						<div class="price-wrap d-flex">
-    							<span class="rate">1.000.000đ</span>
-    							<p class="from-day">
-    								<span>From</span>
-    								<span>/Day</span>
-    							</p>
-    						</div>
-    					</div>
-    					<div class="text p-4 text-center">
-    						<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-    						<span>Audi</span>
-    						<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-md-3">
-    				<div class="car-wrap ftco-animate">
-    					<div class="img d-flex align-items-end" style="background-image: url(static/homepage/images/car-6.jpg);">
-    						<div class="price-wrap d-flex">
-    							<span class="rate">1.000.000đ</span>
-    							<p class="from-day">
-    								<span>From</span>
-    								<span>/Day</span>
-    							</p>
-    						</div>
-    					</div>
-    					<div class="text p-4 text-center">
-    						<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-    						<span>Ford</span>
-    						<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-md-3">
-    				<div class="car-wrap ftco-animate">
-    					<div class="img d-flex align-items-end" style="background-image: url(static/homepage/images/car-7.jpg);">
-    						<div class="price-wrap d-flex">
-    							<span class="rate">1.000.000đ</span>
-    							<p class="from-day">
-    								<span>From</span>
-    								<span>/Day</span>
-    							</p>
-    						</div>
-    					</div>
-    					<div class="text p-4 text-center">
-    						<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-    						<span>Cheverolet</span>
-    						<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-md-3">
-    				<div class="car-wrap ftco-animate">
-    					<div class="img d-flex align-items-end" style="background-image: url(static/homepage/images/car-8.jpg);">
-    						<div class="price-wrap d-flex">
-    							<span class="rate">1.000.000đ</span>
-    							<p class="from-day">
-    								<span>From</span>
-    								<span>/Day</span>
-    							</p>
-    						</div>
-    					</div>
-    					<div class="text p-4 text-center">
-    						<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-    						<span>Mercedes</span>
-    						<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-    					</div>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
-    </section>
-	-->
 
     <section class="ftco-section services-section img" style="background-image: url(static/homepage/images/bg_2.png);">
     	<div class="overlay"></div>
@@ -425,7 +216,7 @@
                 <h3>Pick Information</h3>
                 <p>Information about vehicle, location, pick-up date, drop-off date</p>
               </div>
-            </div>      
+            </div>
           </div>
           <div class="col-md-3 d-flex align-self-stretch ftco-animate">
             <div class="media block-6 services services-2">
@@ -434,7 +225,7 @@
                 <h3>Choose A Vehicle</h3>
                 <p>Pick a vehicle you want</p>
               </div>
-            </div>      
+            </div>
           </div>
           <div class="col-md-3 d-flex align-self-stretch ftco-animate">
             <div class="media block-6 services services-2">
@@ -443,7 +234,7 @@
                 <h3>Receive Car</h3>
                 <p>You can go to the store or book a ship</p>
               </div>
-            </div>      
+            </div>
           </div>
           <div class="col-md-3 d-flex align-self-stretch ftco-animate">
             <div class="media block-6 services services-2">
@@ -452,7 +243,7 @@
                 <h3>Enjoy The Ride</h3>
                 <p>Be careful and enjoy your ride</p>
               </div>
-            </div>      
+            </div>
           </div>
     		</div>
     	</div>
@@ -605,85 +396,5 @@
           </div>
         </div>
       </div>
-    </section>		
-
-    <footer class="ftco-footer ftco-bg-dark ftco-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">About Rent Express</h2>
-              <p>We offer fast and devote service</p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-5">
-              <h2 class="ftco-heading-2">Information</h2>
-              <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">About</a></li>
-                <li><a href="#" class="py-2 d-block">Services</a></li>
-                <li><a href="#" class="py-2 d-block">Term and Conditions</a></li>
-                <li><a href="#" class="py-2 d-block">Best Price Guarantee</a></li>
-                <li><a href="#" class="py-2 d-block">Privacy &amp; Cookies Policy</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Customer Support</h2>
-              <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">FAQ</a></li>
-                <li><a href="#" class="py-2 d-block">Payment Option</a></li>
-                <li><a href="#" class="py-2 d-block">Booking Tips</a></li>
-                <li><a href="#" class="py-2 d-block">How it works</a></li>
-                <li><a href="#" class="py-2 d-block">Contact Us</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">144 Xuan Thuy, Cau Giay, Ha Noi, Viet Nam</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+84 904115999</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">contact@rentexpress.com</span></a></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    
-  
-
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
-
-  <script src="{% static 'homepage/js/jquery.min.js' %}"></script>
-  <script src="{% static 'homepage/js/jquery-migrate-3.0.1.min.js' %}"></script>
-  <script src="{% static 'homepage/js/popper.min.js' %}"></script>
-  <script src="{% static 'homepage/js/bootstrap.min.js' %}"></script>
-  <script src="{% static 'homepage/js/jquery.easing.1.3.js' %}"></script>
-  <script src="{% static 'homepage/js/jquery.waypoints.min.js' %}"></script>
-  <script src="{% static 'homepage/js/jquery.stellar.min.js' %}"></script>
-  <script src="{% static 'homepage/js/owl.carousel.min.js' %}"></script>
-  <script src="{% static 'homepage/js/jquery.magnific-popup.min.js' %}"></script>
-  <script src="{% static 'homepage/js/aos.js' %}"></script>
-  <script src="{% static 'homepage/js/jquery.animateNumber.min.js' %}"></script>
-  <script src="{% static 'homepage/js/bootstrap-datepicker.js' %}"></script>
-  <script src="{% static 'homepage/js/jquery.timepicker.min.js' %}"></script>
-  <script src="{% static 'homepage/js/scrollax.min.js' %}"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="{% static 'homepage/js/google-map.js' %}"></script>
-  <script src="{% static 'homepage/js/main.js' %}"></script>
-    
-  </body>
-</html>
+    </section>
+{% endblock %}
