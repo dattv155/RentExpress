@@ -82,9 +82,9 @@ WSGI_APPLICATION = 'shoppingsite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'uarCE76iT1',
-        'USER': 'uarCE76iT1',
-        'PASSWORD': 'NbjvSGP5vM',
+        'NAME': 'atm0WRsUdo',
+        'USER': 'atm0WRsUdo',
+        'PASSWORD': 'A5VEYpRRfx',
         'HOST': 'remotemysql.com',
         'POST': '3306',
     }
