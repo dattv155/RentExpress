@@ -33,6 +33,9 @@ class variations(models.Model):
     sale_price = models.IntegerField(default=0)
     inStock = models.IntegerField(default=0)
 
+    def __str__(self):
+        return self.product.productName
+
 
 class promotions(models.Model):
     promoCode = models.CharField(default='', max_length=15)
