@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="db" uuid="22f8ce45-4680-4831-83d9-7516b886abda">
-      <driver-ref>sqlite.xerial</driver-ref>
+    <data-source source="LOCAL" name="Django default" uuid="bb6463ec-d5b5-437b-bc7b-732010b73de3">
+      <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db.sqlite3</jdbc-url>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/shoppingsite/settings.py</remarks>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://remotemysql.com:3306/vqAyxKl429</jdbc-url>
     </data-source>
   </component>
 </project>
