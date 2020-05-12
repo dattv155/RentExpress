@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'order',
     'user',
     'core',
+    'profiles',
 ]
 
 MIDDLEWARE = [
@@ -82,9 +83,9 @@ WSGI_APPLICATION = 'shoppingsite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'atm0WRsUdo',
-        'USER': 'atm0WRsUdo',
-        'PASSWORD': 'A5VEYpRRfx',
+        'NAME': 'vqAyxKl429',
+        'USER': 'vqAyxKl429',
+        'PASSWORD': 'LgL1d24zNx',
         'HOST': 'remotemysql.com',
         'POST': '3306',
     }

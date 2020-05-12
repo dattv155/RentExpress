@@ -47,3 +47,8 @@ def userview(request):
         'nav': 'user'
     })
 
+
+def loginview(request):
+    return render(request, 'homepage/login.html', {
+        'nav': 'login'
+    })

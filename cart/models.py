@@ -4,6 +4,7 @@ from user.models import CustomerUser
 
 # Create your models here.
 
+
 class cart(models.Model):
     user = models.ForeignKey(CustomerUser, on_delete=models.CASCADE)
     create_at = models.DateTimeField(auto_now_add=True)
