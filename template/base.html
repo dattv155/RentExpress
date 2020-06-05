@@ -17,7 +17,7 @@
 
     <link rel="stylesheet" href="{% static 'homepage/css/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'homepage/css/owl.theme.default.min.css' %}">
-    <!-- link rel="stylesheet" href="{% static 'homepage/css/magnific-popup.css' %}" -->
+    <link rel="stylesheet" href="{% static 'homepage/css/magnific-popup.css' %}">
 
     <link rel="stylesheet" href="{% static 'homepage/css/aos.css' %}">
 
@@ -48,12 +48,13 @@
                                                                                 class="nav-link">Home</a></li>
                 <li class="nav-item {% if nav == 'about' %}active{% endif %}"><a href="{% url 'about' %}"
                                                                                  class="nav-link">About</a></li>
-                <li class="nav-item {% if nav == 'product' %}active{% endif %}"><a href="{% url 'product' %}"
+                <li class="nav-item {% if nav == 'vehicle' %}active{% endif %}"><a href="{% url 'vehicle' %}"
                                                                                    class="nav-link">Our Vehicle</a></li>
                 <li class="nav-item {% if nav == 'blog' %}active{% endif %}"><a href="{% url 'blog' %}"
                                                                                 class="nav-link">Blog</a></li>
                 <li class="nav-item {% if nav == 'contact' %}active{% endif %}"><a href="{% url 'contact' %}"
                                                                                    class="nav-link">Contact</a></li>
+
             </ul>
             <ul class="navbar-nav ml-5">
                 <li class="nav-item">
@@ -142,7 +143,7 @@
 <script src="{% static 'homepage/js/jquery.waypoints.min.js' %}"></script>
 <script src="{% static 'homepage/js/jquery.stellar.min.js' %}"></script>
 <script src="{% static 'homepage/js/owl.carousel.min.js' %}"></script>
-<!-- script src="{% static 'homepage/js/jquery.magnific-popup.min.js' %}"></script -->
+<script src="{% static 'homepage/js/jquery.magnific-popup.min.js' %}"></script>
 <script src="{% static 'homepage/js/aos.js' %}"></script>
 <script src="{% static 'homepage/js/jquery.animateNumber.min.js' %}"></script>
 <script src="{% static 'homepage/js/bootstrap-datepicker.js' %}"></script>

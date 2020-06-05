@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import django_heroku
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -38,12 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'product',
-    'cart',
-    'order',
-    'user',
-    'core',
+    #'cart',
+    #'order',
+    #'user',
+    #'core',
     'profiles',
+    # 'product',
+    'vehicles.apps.VehiclesConfig',
+    'manufacturer.apps.ManufacturerConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -83,9 +87,9 @@ WSGI_APPLICATION = 'shoppingsite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'vqAyxKl429',
-        'USER': 'vqAyxKl429',
-        'PASSWORD': 'LgL1d24zNx',
+        'NAME': 'Fqcysa1qxc',
+        'USER': 'Fqcysa1qxc',
+        'PASSWORD': 'ebfA4mTukD',
         'HOST': 'remotemysql.com',
         'POST': '3306',
     }
@@ -130,7 +134,7 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-AUTH_USER_MODEL = 'user.CustomerUser'
+# AUTH_USER_MODEL = 'user.CustomerUser'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [

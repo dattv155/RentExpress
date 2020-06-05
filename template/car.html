@@ -1,4 +1,4 @@
-{% extends 'homepage/base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
 <section class="hero-wrap hero-wrap-2 js-fullheight"
@@ -24,7 +24,7 @@
                 <div class="car-wrap ftco-animate">
                     <div class="img d-flex align-items-end" style="background-image: url('{{ item.image.url }}');">
                         <div class="price-wrap d-flex">
-                            <span class="rate">{{ item.rentPrice }}</span>
+                            <span class="rate">{{ item.rent_price }}</span>
                             <p class="from-day">
                                 <span>From</span>
                                 <span>/Day</span>
@@ -32,8 +32,8 @@
                         </div>
                     </div>
                     <div class="text p-4 text-center">
-                        <h2 class="mb-0"><a href="car-single.html">{{ item.productName }}</a></h2>
-                        <span>{{ item.productVendor }}</span>
+                        <h2 class="mb-0"><a href="car-single.html">{{ item.name }}</a></h2>
+                        <span>{{ item.manufacturer }}</span>
                         <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
                             now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
                     </div>
@@ -41,7 +41,6 @@
             </div>
             {% endfor %}
         </div>
-
         <div class="row mt-5">
             <div class="col text-center">
                 <div class="block-27">
@@ -59,7 +58,6 @@
         </div>
     </div>
 </section>
-
 
 <section class="ftco-section">
     <div class="container">
