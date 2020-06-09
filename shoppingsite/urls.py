@@ -20,16 +20,6 @@ from django.conf.urls.static import static
 
 from vehicles import views
 from profiles import views as profiles_views
-
-'''
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('core.urls')),
-    #path('login/', profiles_views.SiteLoginView.as_view(), name='login'),
-
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-'''
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home_view, name='home'),
@@ -37,6 +27,13 @@ urlpatterns = [
     path('vehicle/', views.vehicle_view, name='vehicle'),
     path('blog/', views.blog_view, name='blog'),
     path('contact/', views.contact_view, name='contact'),
-    path('login/', views.login_view, name='login'),
+
+    #path('accounts/', include('django.contrib.auth.urls')),
+    path('login/', profiles_views.SiteLoginView.as_view(), name='login'),
+    path('register/', profiles_views.RegisterView.as_view(), name='register'),
+    path('register_ok/', profiles_views.RegisterOkView.as_view(), name='register_ok'),
+    path('logout/', profiles_views.SiteLogoutView.as_view(), name='logout'),
+    path('profile/', profiles_views.ProfileView.as_view(), name='profile'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 

@@ -8,27 +8,22 @@
             <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
                 <div class="col-md-9 ftco-animate pb-5">
                     <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
-                            class="ion-ios-arrow-forward"></i></a></span> <span>Login <i
+                            class="ion-ios-arrow-forward"></i></a></span> <span>Info <i
                             class="ion-ios-arrow-forward"></i></span></p>
-                    <h1 class="mb-3 bread">Login Your Account</h1>
+                    <h1 class="mb-3 bread">Your Information</h1>
                 </div>
             </div>
         </div>
     </section>
+    <div class="container">
+        <h1>Hồ sơ tài khoản</h1>
+        <p>Xin chào <strong>{{ user.username }}</strong></p>
+        <p>Email: {{ user.email }}</p>
+        <p>Sign Up: {{ user.date_joined }}</p>
+        <p>Last Login: {{ user.last_login }}</p>
 
-    <section class="ftco-section services-section ftco-no-pt ftco-no-pb">
-        <div class="container mt-5 mb-5">
-            <div class="card">
-                <div class="card-body">
-                    <form method="post">
-                        {% csrf_token %}
-                        {{ form.as_p }}
-                        <button type="submit" class="btn btn-primary">Login</button>
-                    </form>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
+        <p><a href="{% url 'logout' %}" class="btn btn-danger">
+            Log Out
+        </a></p>
+    </div>
 {% endblock %}

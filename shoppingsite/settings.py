@@ -43,8 +43,7 @@ INSTALLED_APPS = [
     #'order',
     #'user',
     #'core',
-    'profiles',
-    # 'product',
+    'profiles.apps.ProfilesConfig',
     'vehicles.apps.VehiclesConfig',
     'manufacturer.apps.ManufacturerConfig',
 
@@ -94,7 +93,7 @@ DATABASES = {
         'POST': '3306',
     }
 }
-
+# mysql://Fqcysa1qxc:ebfA4mTukD@remotemysql.com:3306/Fqcysa1qxc
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -144,4 +143,13 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+
 django_heroku.settings(locals())
+
+try:
+    from shoppingsite.local_settings import *
+except ImportError:
+    pass
+
