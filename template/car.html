@@ -92,14 +92,24 @@
                     {% for item in object_list %}
                     <div class="col-md-3">
                         <div class="car-wrap ftco-animate">
+                            <!--
                             <form action="/vehicle" method="GET">
                                 <button>
-                                    <div class="product-img">
-                                        <img src="{{ cart.product.image.url }}" alt="">
+                                    <div class="img d-flex align-items-end"
+                                         style="background-image: url('{{ item.image.url }}');">
+                                        <div class="price-wrap d-flex">
+                                            <span class="rate">{{ item.rent_price }}</span>
+                                            <p class="from-day">
+                                                <span>From</span>
+                                                <span>/Day</span>
+                                            </p>
+                                        </div>
                                     </div>
                                 </button>
-                                <input type="hidden" name="product" value="{{ cart.product.productName }}"/>
+                                <input type="hidden" name="product" value="{{ item.name }}"/>
                             </form>
+                            -->
+
                             <div class="img d-flex align-items-end"
                                  style="background-image: url('{{ item.image.url }}');">
                                 <div class="price-wrap d-flex">
@@ -110,6 +120,7 @@
                                     </p>
                                 </div>
                             </div>
+
                             <div class="text p-4 text-center">
                                 <h2 class="mb-0"><a href="car-single.html">{{ item.name }}</a></h2>
                                 <span>{{ item.manufacturer }}</span>
