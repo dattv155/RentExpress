@@ -22,7 +22,14 @@
         <p>Sign Up: {{ user.date_joined }}</p>
         <p>Last Login: {{ user.last_login }}</p>
 
-        <p><a href="{% url 'logout' %}" class="btn btn-danger">
+        <form method="post">{% csrf_token %}
+            {{ form.as_p }}
+            <p>
+                <button class="btn btn-primary">Update</button>
+            </p>
+        </form>
+
+        <p class="mt-4"><a href="{% url 'logout' %}" class="btn btn-danger">
             Log Out
         </a></p>
     </div>

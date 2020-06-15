@@ -37,16 +37,40 @@
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
         <a class="navbar-brand" href="{% url 'home' %}">Rent<span>Express</span></a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> Menu
         </button>
 
         <div class="collapse navbar-collapse" id="ftco-nav">
+            <!--
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
+            -->
+            <!--
+            <div class="row">
+                <div class="col">
+                    <div class="card card-body">
+                        <form method="get">
+                            {{ my_base_filter.form }}
+                            <button class="btn btn-primary" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            -->
+            <div class="col-md-6">
+                <div class="header-search">
+                    <form action="/vehicle" method="GET">
+                        <input class="input" name='input' placeholder="Search here">
+                        <button type="submit" name="submit" value="Search" class="search-btn">Search</button>
+                    </form>
+                </div>
+            </div>
+
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item {% if nav == 'home' %}active{% endif %}">
                     <a href="{% url 'home' %}" class="nav-link">Home</a></li>

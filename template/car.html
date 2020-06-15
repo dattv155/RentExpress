@@ -1,326 +1,157 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="hero-wrap hero-wrap-2 js-fullheight"
-         style="background-image: url('../static/homepage/images/bg_2.png');" data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
-            <div class="col-md-9 ftco-animate pb-5">
-                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
-                        class="ion-ios-arrow-forward"></i></a></span> <span>About us <i
-                        class="ion-ios-arrow-forward"></i></span></p>
-                <h1 class="mb-3 bread">Choose Your Vehicle</h1>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="ftco-section">
-    <div class="container">
-        <div class="row">
-            {% for item in object_list %}
-            <div class="col-md-3">
-                <div class="car-wrap ftco-animate">
-                    <div class="img d-flex align-items-end" style="background-image: url('{{ item.image.url }}');">
-                        <div class="price-wrap d-flex">
-                            <span class="rate">{{ item.rent_price }}</span>
-                            <p class="from-day">
-                                <span>From</span>
-                                <span>/Day</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="text p-4 text-center">
-                        <h2 class="mb-0"><a href="car-single.html">{{ item.name }}</a></h2>
-                        <span>{{ item.manufacturer }}</span>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
-                            now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-                    </div>
+    <section class="hero-wrap hero-wrap-2 js-fullheight"
+             style="background-image: url('../static/homepage/images/bg_2.png');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container py-5 px-5">
+            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+                <div class="col-lg-8 col"></div>
+                <div class="col-lg-4 col-md-12 mt-0 mt-md-5 d-flex">
+                    <form action="#" class="request-form ftco-animate">
+                        <h2>Pick your vehicle</h2>
+                        <form method="get">
+                            {{ my_filter.form.as_p }}
+                            <button class="btn btn-primary py-2 px-4" type="submit">Search</button>
+                        </form>
+                    </form>
                 </div>
-            </div>
-            {% endfor %}
-        </div>
-        <div class="row mt-5">
-            <div class="col text-center">
-                <div class="block-27">
-                    <ul>
-                        <li><a href="#">&lt;</a></li>
-                        <li class="active"><span>1</span></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">&gt;</a></li>
-                    </ul>
+
+                <div class="col-md-9 ftco-animate pb-5">
+                    <p class="breadcrumbs">
+                        <span class="mr-2">
+                            <a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a>
+                        </span>
+                        <span>Our Vehicles <i class="ion-ios-arrow-forward"></i></span>
+                    </p>
+                    <h1 class="mb-3 bread">Choose Your Vehicle</h1>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <!--
+    <section class="ftco-section ftco-no-pb ftco-no-pt">
+        <div class="container">
+            <div class="row">
+                    <div class="search-wrap-1 ftco-animate mb-0">
+                        <div class="col-lg align-items-end">
+                            <div class="card card-body">
+                                <form method="get">
+                                    {{ my_filter.form.as_p }}
+                                    <button class="btn btn-primary" type="submit">Search</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+    -->
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row">
+                {% if submit_button == 'Search' %}
+                    {% if results %}
+                        <h1>Results for <b>query :</b></h1>
+                        <br/>
+                            {% for item_result in results %}
+                                <div class="col-md-3">
+                                    <div class="car-wrap ftco-animate">
 
-<section class="ftco-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="car-wrap ftco-animate">
-                    <div class="img d-flex align-items-end"
-                         style="background-image: url(../static/homepage/images/car-1.jpg);">
-                        <div class="price-wrap d-flex">
-                            <span class="rate">$25</span>
-                            <p class="from-day">
-                                <span>From</span>
-                                <span>/Day</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="text p-4 text-center">
-                        <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-                        <span>Audi</span>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
-                            now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="car-wrap ftco-animate">
-                    <div class="img d-flex align-items-end"
-                         style="background-image: url(../static/homepage/images/car-2.jpg);">
-                        <div class="price-wrap d-flex">
-                            <span class="rate">$25</span>
-                            <p class="from-day">
-                                <span>From</span>
-                                <span>/Day</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="text p-4 text-center">
-                        <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-                        <span>Ford</span>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
-                            now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="car-wrap ftco-animate">
-                    <div class="img d-flex align-items-end"
-                         style="background-image: url(../static/homepage/images/car-3.jpg);">
-                        <div class="price-wrap d-flex">
-                            <span class="rate">$25</span>
-                            <p class="from-day">
-                                <span>From</span>
-                                <span>/Day</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="text p-4 text-center">
-                        <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-                        <span>Cheverolet</span>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
-                            now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="car-wrap ftco-animate">
-                    <div class="img d-flex align-items-end"
-                         style="background-image: url(../static/homepage/images/car-4.jpg);">
-                        <div class="price-wrap d-flex">
-                            <span class="rate">$25</span>
-                            <p class="from-day">
-                                <span>From</span>
-                                <span>/Day</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="text p-4 text-center">
-                        <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-                        <span>Mercedes</span>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
-                            now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-                    </div>
-                </div>
-            </div>
+                                        <div class="img d-flex align-items-end"
+                                             style="background-image: url('{{ item.image.url }}');">
 
-            <div class="col-md-3">
-                <div class="car-wrap ftco-animate">
-                    <div class="img d-flex align-items-end"
-                         style="background-image: url(../static/homepage/images/car-5.jpg);">
-                        <div class="price-wrap d-flex">
-                            <span class="rate">$25</span>
-                            <p class="from-day">
-                                <span>From</span>
-                                <span>/Day</span>
-                            </p>
+                                            <div class="price-wrap d-flex">
+                                                <span class="rate">{{ item_result.rent_price }}</span>
+                                                <p class="from-day">
+                                                    <span>From</span>
+                                                    <span>/Day</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="text p-4 text-center">
+                                            <h2 class="mb-0"><a href="car-single.html">{{ item_result.name }}</a>
+                                            </h2>
+                                            <span>{{ item_result.manufacturer }}</span>
+                                            <p class="d-flex mb-0 d-block">
+                                                <a href="#" class="btn btn-black btn-outline-black mr-1">Book now</a>
+                                                <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        <br/>
+
+                    {% else %}
+                        <div align='center'><h1> No search results found </h1></div>
+                        <br/>
+                        <div align='center'><h3> Try to search again </h3></div>
+                    {% endif %}
+                {% else %}
+                    {% for item in object_list %}
+                    <div class="col-md-3">
+                        <div class="car-wrap ftco-animate">
+                            <form action="/vehicle" method="GET">
+                                <button>
+                                    <div class="product-img">
+                                        <img src="{{ cart.product.image.url }}" alt="">
+                                    </div>
+                                </button>
+                                <input type="hidden" name="product" value="{{ cart.product.productName }}"/>
+                            </form>
+                            <div class="img d-flex align-items-end"
+                                 style="background-image: url('{{ item.image.url }}');">
+                                <div class="price-wrap d-flex">
+                                    <span class="rate">{{ item.rent_price }}</span>
+                                    <p class="from-day">
+                                        <span>From</span>
+                                        <span>/Day</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="text p-4 text-center">
+                                <h2 class="mb-0"><a href="car-single.html">{{ item.name }}</a></h2>
+                                <span>{{ item.manufacturer }}</span>
+                                <span><strong>{{ item.hire_point }}</strong></span>
+                                <p class="d-flex mb-0 d-block">
+                                    <a href="#" class="btn btn-black btn-outline-black mr-1">Book now</a>
+                                    <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a>
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <div class="text p-4 text-center">
-                        <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-                        <span>Audi</span>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
-                            now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="car-wrap ftco-animate">
-                    <div class="img d-flex align-items-end"
-                         style="background-image: url(../static/homepage/images/car-6.jpg);">
-                        <div class="price-wrap d-flex">
-                            <span class="rate">$25</span>
-                            <p class="from-day">
-                                <span>From</span>
-                                <span>/Day</span>
-                            </p>
+                {% endfor %}
+                {% endif %}
+
+
+                <!--
+                {% for item in object_list %}
+                    <div class="col-md-3">
+                        <div class="car-wrap ftco-animate">
+                            <div class="img d-flex align-items-end"
+                                 style="background-image: url('{{ item.image.url }}');">
+                                <div class="price-wrap d-flex">
+                                    <span class="rate">{{ item.rent_price }}</span>
+                                    <p class="from-day">
+                                        <span>From</span>
+                                        <span>/Day</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="text p-4 text-center">
+                                <h2 class="mb-0"><a href="car-single.html">{{ item.name }}</a></h2>
+                                <span>{{ item.manufacturer }}</span>
+                                <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
+                                    now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
+                            </div>
                         </div>
                     </div>
-                    <div class="text p-4 text-center">
-                        <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-                        <span>Ford</span>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
-                            now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="car-wrap ftco-animate">
-                    <div class="img d-flex align-items-end"
-                         style="background-image: url(../static/homepage/images/car-7.jpg);">
-                        <div class="price-wrap d-flex">
-                            <span class="rate">$25</span>
-                            <p class="from-day">
-                                <span>From</span>
-                                <span>/Day</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="text p-4 text-center">
-                        <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-                        <span>Cheverolet</span>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
-                            now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="car-wrap ftco-animate">
-                    <div class="img d-flex align-items-end"
-                         style="background-image: url(../static/homepage/images/car-8.jpg);">
-                        <div class="price-wrap d-flex">
-                            <span class="rate">$25</span>
-                            <p class="from-day">
-                                <span>From</span>
-                                <span>/Day</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="text p-4 text-center">
-                        <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-                        <span>Mercedes</span>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
-                            now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-                    </div>
-                </div>
+                {% endfor %}
+                -->
             </div>
 
-            <div class="col-md-3">
-                <div class="car-wrap ftco-animate">
-                    <div class="img d-flex align-items-end"
-                         style="background-image: url(../static/homepage/images/car-9.jpg);">
-                        <div class="price-wrap d-flex">
-                            <span class="rate">$25</span>
-                            <p class="from-day">
-                                <span>From</span>
-                                <span>/Day</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="text p-4 text-center">
-                        <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-                        <span>Audi</span>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
-                            now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="car-wrap ftco-animate">
-                    <div class="img d-flex align-items-end"
-                         style="background-image: url(../static/homepage/images/car-10.jpg);">
-                        <div class="price-wrap d-flex">
-                            <span class="rate">$25</span>
-                            <p class="from-day">
-                                <span>From</span>
-                                <span>/Day</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="text p-4 text-center">
-                        <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-                        <span>Ford</span>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
-                            now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="car-wrap ftco-animate">
-                    <div class="img d-flex align-items-end"
-                         style="background-image: url(../static/homepage/images/car-11.jpg);">
-                        <div class="price-wrap d-flex">
-                            <span class="rate">$25</span>
-                            <p class="from-day">
-                                <span>From</span>
-                                <span>/Day</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="text p-4 text-center">
-                        <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-                        <span>Cheverolet</span>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
-                            now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="car-wrap ftco-animate">
-                    <div class="img d-flex align-items-end"
-                         style="background-image: url(../static/homepage/images/car-12.jpg);">
-                        <div class="price-wrap d-flex">
-                            <span class="rate">$25</span>
-                            <p class="from-day">
-                                <span>From</span>
-                                <span>/Day</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="text p-4 text-center">
-                        <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-                        <span>Mercedes</span>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
-                            now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-                    </div>
-                </div>
-            </div>
         </div>
-        <div class="row mt-5">
-            <div class="col text-center">
-                <div class="block-27">
-                    <ul>
-                        <li><a href="#">&lt;</a></li>
-                        <li class="active"><span>1</span></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">&gt;</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
 {% endblock %}

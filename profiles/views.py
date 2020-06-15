@@ -1,11 +1,13 @@
+from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView, LogoutView
 from django.shortcuts import redirect
-from django.urls import reverse
-from django.views.generic import TemplateView, FormView
+from django.urls import reverse, reverse_lazy
+from django.views.generic import TemplateView, FormView, UpdateView
 
 from profiles.form import RegisterForm
+
+User = get_user_model()
 
 
 class SiteLoginView(LoginView):
@@ -36,11 +38,17 @@ class RegisterOkView(TemplateView):
         return context
 
 
-class ProfileView(LoginRequiredMixin, TemplateView):
-    template_name = 'profile.html'
-
-
 class SiteLogoutView(LogoutView):
     template_name = 'logout.html'
+
+
+class ProfileEditView(LoginRequiredMixin, UpdateView):
+    template_name = 'profile.html'
+    model = User
+    fields = ('full_name', 'address', 'year_birth', 'about')
+    success_url = reverse_lazy('profile')
+
+    def get_object(self, queryset=None):
+        return self.request.user
 
 

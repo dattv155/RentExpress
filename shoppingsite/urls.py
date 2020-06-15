@@ -25,6 +25,7 @@ urlpatterns = [
     path('', views.home_view, name='home'),
     path('about/', views.about_view, name='about'),
     path('vehicle/', views.vehicle_view, name='vehicle'),
+    path('vehicle_single/', views.vehicle_single_view, name='vehicle_single'),
     path('blog/', views.blog_view, name='blog'),
     path('contact/', views.contact_view, name='contact'),
 
@@ -33,7 +34,7 @@ urlpatterns = [
     path('register/', profiles_views.RegisterView.as_view(), name='register'),
     path('register_ok/', profiles_views.RegisterOkView.as_view(), name='register_ok'),
     path('logout/', profiles_views.SiteLogoutView.as_view(), name='logout'),
-    path('profile/', profiles_views.ProfileView.as_view(), name='profile'),
+    path('profile/', profiles_views.ProfileEditView.as_view(), name='profile'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

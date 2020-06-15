@@ -39,14 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_filters',
     #'cart',
     #'order',
     #'user',
     #'core',
     'profiles.apps.ProfilesConfig',
     'vehicles.apps.VehiclesConfig',
-    'manufacturer.apps.ManufacturerConfig',
-
+    'orders.apps.OrdersConfig',
 ]
 
 MIDDLEWARE = [
@@ -119,13 +119,16 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Ho_Chi_Minh'
 
 USE_I18N = True
 
 USE_L10N = True
 
 USE_TZ = True
+
+
+AUTH_USER_MODEL = 'profiles.User'
 
 
 # Static files (CSS, JavaScript, Images)
@@ -145,6 +148,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
+
+LOGOUT_REDIRECT_URL = '/'
 
 django_heroku.settings(locals())
 
