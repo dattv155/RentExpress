@@ -73,10 +73,23 @@
                                             <h2 class="mb-0"><a href="car-single.html">{{ item_result.name }}</a>
                                             </h2>
                                             <span>{{ item_result.manufacturer }}</span>
+                                            <!--
                                             <p class="d-flex mb-0 d-block">
                                                 <a href="#" class="btn btn-black btn-outline-black mr-1">Book now</a>
                                                 <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a>
                                             </p>
+                                            -->
+                                            <div class="d-flex mb-0 d-block">
+                                                <form action="/vehicle_single" method="GET">
+                                                    <button name="Book_now" type="submit" value="book_now"
+                                                            class="btn btn-black btn-outline-black mr-1">Book now
+                                                    </button>
+                                                    <button name="Details" type="submit" value="details"
+                                                            class="btn btn-black btn-outline-black mr-1">Details
+                                                    </button>
+                                                    <input type="hidden" name="vehicle" value="{{cart.product.productName}}"/>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -125,10 +138,24 @@
                                 <h2 class="mb-0"><a href="car-single.html">{{ item.name }}</a></h2>
                                 <span>{{ item.manufacturer }}</span>
                                 <span><strong>{{ item.hire_point }}</strong></span>
+                                <!--
                                 <p class="d-flex mb-0 d-block">
                                     <a href="#" class="btn btn-black btn-outline-black mr-1">Book now</a>
-                                    <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a>
+                                    <a href="{% url 'vehicle_single' %}" class="btn btn-black btn-outline-black ml-1">Details</a>
+                                    <input type="hidden" name="vehicle_info" value="{{ item.name }}"/>
                                 </p>
+                                -->
+                                <div class="d-flex mb-0 d-block">
+                                    <form action="/vehicle_single" method="GET">
+                                        <button name="Book_now" type="submit" value="book_now"
+                                                class="btn btn-black btn-outline-black mr-1">Book now
+                                        </button>
+                                        <button name="Details" type="submit" value="details"
+                                                class="btn btn-black btn-outline-black mr-1">Details
+                                        </button>
+                                        <input type="hidden" name="vehicle_single" value="{{ item.name }}"/>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>

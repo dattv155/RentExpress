@@ -15,7 +15,7 @@ def home_view(request):
     context = {'object_list': object_list, 'my_base_filter': my_base_filter, 'nav': 'home'}'''
 
     context1 = {'nav': 'home'}
-    submit_button = request.GET.get('submit')
+    submit_button = request.GET.get('vehicle')
     if submit_button == 'Search':
         query = request.GET.get('input')
         if query is not None:
@@ -51,7 +51,11 @@ def vehicle_view(request):
 
 
 def vehicle_single_view(request):
-    context = {'nav': 'vehicle', }
+    name_vehicle = request.GET.get('vehicle_single')
+    vehicle = Vehicle.objects.get(name=name_vehicle)
+    vehicle.save()
+
+    context = {'vehicle': vehicle, 'nav': 'vehicle'}
 
     return render(request, 'vehicle-single.html', context)
 

@@ -15,6 +15,7 @@
             </div>
         </div>
     </section>
+    <br>
     <div class="container">
         <h1>Hồ sơ tài khoản</h1>
         <p>Xin chào <strong>{{ user.username }}</strong></p>
@@ -22,7 +23,8 @@
         <p>Sign Up: {{ user.date_joined }}</p>
         <p>Last Login: {{ user.last_login }}</p>
 
-        <form method="post">{% csrf_token %}
+        <form method="post">
+            {% csrf_token %}
             {{ form.as_p }}
             <p>
                 <button class="btn btn-primary">Update</button>

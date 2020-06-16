@@ -1,6 +1,297 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <section class="hero-wrap hero-wrap-2 js-fullheight"
+             style="background-image: url('../static/homepage/images/bg_2.png');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container py-5 px-5">
+            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+                <div class="col-md-9 ftco-animate pb-5">
+                    <p class="breadcrumbs">
+                        <span class="mr-2">
+                            <a href="{% url 'home' %}">Home <i class="ion-ios-arrow-forward"></i></a>
+                        </span>
+                        <span>Our Vehicles <i class="ion-ios-arrow-forward"></i></span>
+                    </p>
+                    <h1 class="mb-3 bread">Choose Your Vehicle</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br>
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row">
+                {% for item in single_vehicle %}
+                    <div class="col-md-3">
+                        <div class="car-wrap ftco-animate">
+                            <div class="img d-flex align-items-end"
+                                 style="background-image: url('{{ item.image.url }}');">
+                                <div class="price-wrap d-flex">
+                                    <span class="rate">{{ item.rent_price }}</span>
+                                    <p class="from-day">
+                                        <span>From</span>
+                                        <span>/Day</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="text p-4 text-center">
+                                <h2 class="mb-0"><a href="car-single.html">{{ item.name }}</a></h2>
+                                <span>{{ item.manufacturer }}</span>
+                                <span><strong>{{ item.hire_point }}</strong></span>
+                                <!--
+                                <p class="d-flex mb-0 d-block">
+                                    <a href="#" class="btn btn-black btn-outline-black mr-1">Book now</a>
+                                    <a href="{% url 'vehicle_single' %}" class="btn btn-black btn-outline-black ml-1">Details</a>
+                                    <input type="hidden" name="vehicle_info" value="{{ item.name }}"/>
+                                </p>
+                                -->
 
 
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    {% load static %}
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-md-push-2">
+                    <div id="product-main-img">
+                        <div class="product-preview">
+                            <img src="{{ vehicle.image.url }}" alt="" width="400" height="400">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-2  col-md-pull-5">
+                    <div id="product-img">
+                        <div class="product-preview">
+                            <img src="{{ vehicle.image.url }}" alt="" width="100" height="100">
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-5">
+                    <div class="vehicle-details">
+                        <h2 class="vehicle-name">{{ vehicle.name }}</h2>
+                        <div>
+                            <div class="vehicle-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <p class="review-link">{{ vehicle.rating }} Star</p>
+                        </div>
+                        <div>
+                            <h3 class="vehicle-price"> {{ vehicle.rent_price }} VND/DAY
+                                <del class="product-old-price">{{ vehicle.rent_price }} VND</del>
+                            </h3>
+                            <span class="vehicle-available">
+									{% if vehicle.quantity > 0 %}
+                                        <p> In Stock </p>
+                                    {% else %}
+                                        <p> Out of Stock </p>
+                                    {% endif %}
+								</span>
+                        </div>
+                        <p>{{ vehicle.description }}</p>
+
+                        <div class="add-to-cart">
+                            <form action="addToCart/" method="GET">
+                                <div class="qty-label">
+                                    Qty
+                                    <div class="input-number">
+                                        <input type="number" name="quantity" value="1">
+                                        <span class="qty-up">+</span>
+                                        <span class="qty-down">-</span>
+                                    </div>
+                                </div>
+                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                <!--
+                                <input type="hidden" name="productCode" value="{{ vehicle. }}"/>
+                                <input type="hidden" name="sale" value="{{ product.salePrice }}"/>
+                                -->
+                            </form>
+                        </div>
+
+                        <ul class="product-links">
+                            <li>Category: {{ vehicle.vehicle_line }}</li>
+                            <li>Manufacturer: {{ vehicle.manufacturer }}</li>
+                            <li>Hire point: {{ vehicle.hire_point }}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div id="product-tab">
+                        <ul class="tab-nav">
+                            <li class="active"><a data-toggle="tab" href="#tab1">Description</a></li>
+                            <li><a data-toggle="tab" href="#tab2">Reviews ({{ vehicle.rating }})</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div id="tab1" class="tab-pane fade in active">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>{{ vehicle.description }} </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--
+                            <div id="tab2" class="tab-pane fade in">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div id="rating">
+                                            <div class="rating-avg">
+                                                <span>{{ averageRating }}</span>
+                                                <div class="rating-stars">
+                                                    {% for i in rangeAverageRating %}
+                                                        <i class="fa fa-star"></i>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                            <ul class="rating">
+                                                <li>
+                                                    <div class="rating-stars">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <div class="rating-progress">
+                                                        <div style="width: {{ fiveStarRatingPercent }}%;"></div>
+                                                    </div>
+                                                    <span class="sum">{{ fiveStarRating }}</span>
+                                                </li>
+                                                <li>
+                                                    <div class="rating-stars">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-o"></i>
+                                                    </div>
+                                                    <div class="rating-progress">
+                                                        <div style="width: {{ fourStarRatingPercent }}%;"></div>
+                                                    </div>
+                                                    <span class="sum">{{ fourStarRating }}</span>
+                                                </li>
+                                                <li>
+                                                    <div class="rating-stars">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-o"></i>
+                                                        <i class="fa fa-star-o"></i>
+                                                    </div>
+                                                    <div class="rating-progress">
+                                                        <div style="width: {{ threeStarRatingPercent }}%;"></div>
+                                                    </div>
+                                                    <span class="sum">{{ threeStarRating }}</span>
+                                                </li>
+                                                <li>
+                                                    <div class="rating-stars">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-o"></i>
+                                                        <i class="fa fa-star-o"></i>
+                                                        <i class="fa fa-star-o"></i>
+                                                    </div>
+                                                    <div class="rating-progress">
+                                                        <div style="width: {{ twoStarRatingPercent }}%;"></div>
+                                                    </div>
+                                                    <span class="sum">{{ twoStarRating }}</span>
+                                                </li>
+                                                <li>
+                                                    <div class="rating-stars">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-o"></i>
+                                                        <i class="fa fa-star-o"></i>
+                                                        <i class="fa fa-star-o"></i>
+                                                        <i class="fa fa-star-o"></i>
+                                                    </div>
+                                                    <div class="rating-progress">
+                                                        <div style="width: {{ oneStarRatingPercent }}%;"></div>
+                                                    </div>
+                                                    <span class="sum">{{ oneStarRating }}</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div id="reviews">
+                                            <ul class="reviews">
+                                                {% for feedback in feedbacks %}
+                                                    <li>
+                                                        <div class="review-heading">
+                                                            <h5 class="name">{{ feedback.customer.name }}</h5>
+                                                            <p class="date">{{ feedback.feedbackDate }}</p>
+                                                            <div class="review-rating">
+                                                                {{ feedback.rating }} <i
+                                                                    class="fa fa-star"></i> {{ feedback.notRating }} <i
+                                                                    class="fa fa-star-o empty"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="review-body">
+                                                            <p>{{ feedback.Content }}</p>
+                                                        </div>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                            <ul class="reviews-pagination">
+                                                <li class="active">1</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div id="review-form">
+                                            <form class="review-form" action="/feedback" method="GET">
+                                                <input class="input" type="text" name="customer"
+                                                       placeholder="Your Name">
+                                                <textarea class="input" name="content"
+                                                          placeholder="Your Review"></textarea>
+                                                <div class="input-rating">
+                                                    <span>Your Rating: </span>
+                                                    <div class="stars">
+                                                        <input id="star5" name="rating" value="5" type="radio"><label
+                                                            for="star5"></label>
+                                                        <input id="star4" name="rating" value="4" type="radio"><label
+                                                            for="star4"></label>
+                                                        <input id="star3" name="rating" value="3" type="radio"><label
+                                                            for="star3"></label>
+                                                        <input id="star2" name="rating" value="2" type="radio"><label
+                                                            for="star2"></label>
+                                                        <input id="star1" name="rating" value="1" type="radio"><label
+                                                            for="star1"></label>
+                                                    </div>
+                                                </div>
+                                                <button class="primary-btn">Submit</button>
+                                                <input type="hidden" name='productCode'
+                                                       value="{{ product.productCode }}"/>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

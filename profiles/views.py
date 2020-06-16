@@ -13,10 +13,20 @@ User = get_user_model()
 class SiteLoginView(LoginView):
     template_name = 'login.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['nav'] = 'login'
+        return context
+
 
 class RegisterView(FormView):
     template_name = 'register.html'
     form_class = RegisterForm
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['nav'] = 'register'
+        return context
 
     def form_valid(self, form):
         data = form.cleaned_data
@@ -25,7 +35,8 @@ class RegisterView(FormView):
             password=data['password1'],
             email=data['email']
         )
-        url = f"{reverse('register_ok')}?username={new_user.username}"
+        #url = f"{reverse('register_ok')}?username={new_user.username}"
+        url = f"{reverse('login')}"
         return redirect(url)
 
 
