@@ -28,6 +28,7 @@ urlpatterns = [
     path('vehicle_single/', views.vehicle_single_view, name='vehicle_single'),
     path('blog/', views.blog_view, name='blog'),
     path('contact/', views.contact_view, name='contact'),
+    path('booking/', views.booking_view, name='booking'),
 
     #path('accounts/', include('django.contrib.auth.urls')),
     path('login/', profiles_views.SiteLoginView.as_view(), name='login'),

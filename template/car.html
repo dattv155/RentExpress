@@ -29,99 +29,12 @@
             </div>
         </div>
     </section>
-    <!--
-    <section class="ftco-section ftco-no-pb ftco-no-pt">
-        <div class="container">
-            <div class="row">
-                    <div class="search-wrap-1 ftco-animate mb-0">
-                        <div class="col-lg align-items-end">
-                            <div class="card card-body">
-                                <form method="get">
-                                    {{ my_filter.form.as_p }}
-                                    <button class="btn btn-primary" type="submit">Search</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </section>
-    -->
     <section class="ftco-section">
         <div class="container">
-            <div class="row">
-                {% if submit_button == 'Search' %}
-                    {% if results %}
-                        <h1>Results for <b>query :</b></h1>
-                        <br/>
-                            {% for item_result in results %}
-                                <div class="col-md-3">
-                                    <div class="car-wrap ftco-animate">
-
-                                        <div class="img d-flex align-items-end"
-                                             style="background-image: url('{{ item.image.url }}');">
-
-                                            <div class="price-wrap d-flex">
-                                                <span class="rate">{{ item_result.rent_price }}</span>
-                                                <p class="from-day">
-                                                    <span>From</span>
-                                                    <span>/Day</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="text p-4 text-center">
-                                            <h2 class="mb-0"><a href="car-single.html">{{ item_result.name }}</a>
-                                            </h2>
-                                            <span>{{ item_result.manufacturer }}</span>
-                                            <!--
-                                            <p class="d-flex mb-0 d-block">
-                                                <a href="#" class="btn btn-black btn-outline-black mr-1">Book now</a>
-                                                <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a>
-                                            </p>
-                                            -->
-                                            <div class="d-flex mb-0 d-block">
-                                                <form action="/vehicle_single" method="GET">
-                                                    <button name="Book_now" type="submit" value="book_now"
-                                                            class="btn btn-black btn-outline-black mr-1">Book now
-                                                    </button>
-                                                    <button name="Details" type="submit" value="details"
-                                                            class="btn btn-black btn-outline-black mr-1">Details
-                                                    </button>
-                                                    <input type="hidden" name="vehicle" value="{{cart.product.productName}}"/>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            {% endfor %}
-                        <br/>
-
-                    {% else %}
-                        <div align='center'><h1> No search results found </h1></div>
-                        <br/>
-                        <div align='center'><h3> Try to search again </h3></div>
-                    {% endif %}
-                {% else %}
-                    {% for item in object_list %}
-                    <div class="col-md-3">
+            <div class="row justify-content-center">
+                {% for item in list_vehicle %}
+                    <div class="col-md-6">
                         <div class="car-wrap ftco-animate">
-                            <!--
-                            <form action="/vehicle" method="GET">
-                                <button>
-                                    <div class="img d-flex align-items-end"
-                                         style="background-image: url('{{ item.image.url }}');">
-                                        <div class="price-wrap d-flex">
-                                            <span class="rate">{{ item.rent_price }}</span>
-                                            <p class="from-day">
-                                                <span>From</span>
-                                                <span>/Day</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </button>
-                                <input type="hidden" name="product" value="{{ item.name }}"/>
-                            </form>
-                            -->
 
                             <div class="img d-flex align-items-end"
                                  style="background-image: url('{{ item.image.url }}');">
@@ -138,14 +51,7 @@
                                 <h2 class="mb-0"><a href="car-single.html">{{ item.name }}</a></h2>
                                 <span>{{ item.manufacturer }}</span>
                                 <span><strong>{{ item.hire_point }}</strong></span>
-                                <!--
-                                <p class="d-flex mb-0 d-block">
-                                    <a href="#" class="btn btn-black btn-outline-black mr-1">Book now</a>
-                                    <a href="{% url 'vehicle_single' %}" class="btn btn-black btn-outline-black ml-1">Details</a>
-                                    <input type="hidden" name="vehicle_info" value="{{ item.name }}"/>
-                                </p>
-                                -->
-                                <div class="d-flex mb-0 d-block">
+                                <div class="d-flex mb-0 d-block justify-content-center">
                                     <form action="/vehicle_single" method="GET">
                                         <button name="Book_now" type="submit" value="book_now"
                                                 class="btn btn-black btn-outline-black mr-1">Book now
@@ -160,35 +66,25 @@
                         </div>
                     </div>
                 {% endfor %}
-                {% endif %}
 
-
-                <!--
-                {% for item in object_list %}
-                    <div class="col-md-3">
-                        <div class="car-wrap ftco-animate">
-                            <div class="img d-flex align-items-end"
-                                 style="background-image: url('{{ item.image.url }}');">
-                                <div class="price-wrap d-flex">
-                                    <span class="rate">{{ item.rent_price }}</span>
-                                    <p class="from-day">
-                                        <span>From</span>
-                                        <span>/Day</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="text p-4 text-center">
-                                <h2 class="mb-0"><a href="car-single.html">{{ item.name }}</a></h2>
-                                <span>{{ item.manufacturer }}</span>
-                                <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
-                                    now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-                            </div>
-                        </div>
+                <div class="row justify-content-center">
+                    <div class="pagination">
+                        <span class="step-links">
+                            {% if list_vehicle.has_previous %}
+                                <a href="?page={{ list_vehicle.previous_page_number }}">Previous </a>
+                            {% endif %}
+                        </span>
+                        <span class="current">
+                            Page {{ list_vehicle.number }} of {{ list_vehicle.paginator.num_pages }}
+                        </span>
+                        <span>
+                            {% if list_vehicle.has_next %}
+                                <a href="?page={{ list_vehicle.next_page_number }}"> Next</a>
+                            {% endif %}
+                        </span>
                     </div>
-                {% endfor %}
-                -->
+                </div>
             </div>
-
         </div>
     </section>
 

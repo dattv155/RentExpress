@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.views.generic import FormView
 
 from vehicles.models import Vehicle
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from .filters import *
 
 
@@ -26,8 +27,15 @@ def vehicle_view(request):
     if 'input' in request.GET and request.GET['input']:
         word = request.GET['input']
         object_list = Vehicle.objects.filter(name__icontains=word)
-
-    context = {'object_list': object_list, 'my_filter': my_filter, 'nav': 'vehicle'}
+    paginator = Paginator(object_list, 4)
+    page_number = request.GET.get('page')
+    try:
+        list_vehicle = paginator.page(page_number)
+    except PageNotAnInteger:
+        list_vehicle = paginator.page(1)
+    except EmptyPage:
+        list_vehicle = paginator.page(paginator.num_pages)
+    context = {'list_vehicle': list_vehicle, 'my_filter': my_filter, 'nav': 'vehicle'}
 
     return render(request, 'car.html', context)
 
@@ -53,3 +61,6 @@ def contact_view(request):
         'nav': 'contact'
     })
 
+
+def booking_view(request):
+    return render(request, 'booking.html')
