@@ -7,30 +7,8 @@ from .filters import *
 
 
 def home_view(request):
-    '''object_list = Vehicle.objects.all()
-
-    my_base_filter = VehicleBaseFilter(request.GET, queryset=object_list)
-    object_list = my_base_filter.qs
-
-    context = {'object_list': object_list, 'my_base_filter': my_base_filter, 'nav': 'home'}'''
-
-    context1 = {'nav': 'home'}
-    submit_button = request.GET.get('vehicle')
-    if submit_button == 'Search':
-        query = request.GET.get('input')
-        if query is not None:
-            results = Vehicle.objects.filter(name__icontains=query)
-
-            # filter all the product which title and content has word in query in category table
-            context = {'nav': 'home',
-                       'results': results,
-                       'submit_button': submit_button}
-
-            return render(request, 'car.html', context)
-        else:
-            return render(request, 'car.html', context1)
-    else:
-        return render(request, 'index.html', context1)
+    context = {'nav': 'home'}
+    return render(request, 'index.html', context)
 
 
 def about_view(request):
@@ -44,6 +22,10 @@ def vehicle_view(request):
 
     my_filter = VehicleFilter(request.GET, queryset=object_list)
     object_list = my_filter.qs
+
+    if 'input' in request.GET and request.GET['input']:
+        word = request.GET['input']
+        object_list = Vehicle.objects.filter(name__icontains=word)
 
     context = {'object_list': object_list, 'my_filter': my_filter, 'nav': 'vehicle'}
 
