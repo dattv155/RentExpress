@@ -48,7 +48,7 @@
                             </div>
 
                             <div class="text p-4 text-center">
-                                <h2 class="mb-0"><a href="car-single.html">{{ item.name }}</a></h2>
+                                <h2 class="mb-0"><a>{{ item.name }}</a></h2>
                                 <span>{{ item.manufacturer }}</span>
                                 <span><strong>{{ item.hire_point }}</strong></span>
                                 <div class="d-flex mb-0 d-block justify-content-center">
@@ -67,7 +67,7 @@
                     </div>
                 {% endfor %}
 
-                <div class="row justify-content-center">
+                <div class="row">
                     <div class="pagination">
                         <span class="step-links">
                             {% if list_vehicle.has_previous %}

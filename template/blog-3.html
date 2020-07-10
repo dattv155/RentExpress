@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% load static %}
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('../static/homepage/images/image_3.png');"
+             data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+                <div class="col-md-9 ftco-animate pb-5">
+                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
+                            class="ion-ios-arrow-forward"></i></a></span> <span class="mr-2"><a href="blog.html">Blog <i
+                            class="ion-ios-arrow-forward"></i></a></span> <span>Blog Single <i
+                            class="ion-ios-arrow-forward"></i></span></p>
+                    <h1 class="mb-3 bread">Read our blog</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section ftco-degree-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 order-md-last ftco-animate">
+                    <h1 class="mb-3">Đạp xe quanh Hồ Tây Hà Nội – trải nghiệm bạn không nên bỏ lỡ</h1>
+                    <p>Được coi là hồ lớn nhất được tìm thấy ở trung tâm, Hồ Tây nằm ở phía Bắc thủ đô. Với chiều dài
+                        bờ hồ lên đến  hơn 17 km. Đi bộ quanh Hồ Tây dường như là một trong những điều điên rồ nhất mà
+                        bạn có thể làm. Nhưng đi xe đạp nghe có vẻ dễ dàng hơn phải không nào. Vào buổi sáng sớm hoặc
+                        hoàng hôn, nhiệt độ bên ngoài còn thấp. Đi xe đạp là cách tốt nhất để đắm mình vào gió mát từ
+                        hồ, và chiêm ngưỡng sự quyến rũ kỳ diệu ở đây.</p>
+                    <p>
+                        <img src="{% static 'homepage/images/blog-3.1.jpg' %}" alt="" class="img-fluid">
+                    </p>
+                    <h2 class="mb-3 mt-5">Khám phá các ngôi đền ở Hà Nội</h2>
+                    <p>Đi xe đạp xung quanh hồ là một trải nghiệm tuyệt vời hơn bao giờ hết. Bạn có thể dễ dàng dừng lại
+                        và ghé thăm một số ngôi đền đẹp ven hồ. Theo đường Quán Thánh hoặc Điện Biên Phủ, đền Quán Thánh
+                        hay chùa Trấn Quốc là nơi đầu tiên bạn không thể bỏ lỡ. Hãy dừng lại bên ngôi đền và tìm hiểu
+                        thêm về lịch sử hoặc lắng nghe một số câu chuyện về Phật giáo ở Việt Nam.
+                    </p>
+                    <p>
+                        <img src="{% static 'homepage/images/blog-3.2.jpg' %}" alt="" class="img-fluid">
+                    </p>
+                    <h2 class="mb-3 mt-5">Ghé đầm sen để thưởng thức cái đẹp</h2>
+                    <p>Đừng quên các đầm hoa sen bạn nhé, bạn sẽ tiếc nuối khi không đến nơi này. Đến Hà Nội vào mùa hoa
+                        sen đang nở rộ và làm cho khu vực này trở nên tuyệt vời hơn. Đây sẽ là một kỷ niệm mà không thể
+                        nào quên đối với bất kỳ ai khi đặt chấn đến.</p>
+                    <p>
+                        <img src="{% static 'homepage/images/blog-3.3.jpg' %}" alt="" class="img-fluid">
+                    </p>
+                    <p>
+                        Không có gì tốt hơn để kết thúc chuyến đi xe đạp của bạn bằng cách dừng lại ở một nhà hàng nhỏ
+                        để ăn. Bạn sẽ được thưởng thức các món ăn địa phương đặc trưng nơi này. Hoặc thậm chí thưởng
+                        thức một ly bia lạnh trong khi những làn gió mát thổi qua hồ. Dọc theo vỉa hè ở Hồ Tây, bạn có
+                        thể dễ dàng chọn một quán cà phê để dừng lại. Nếu có thể, bạn hãy ngồi trong một quán cà phê ở
+                        đầu đường Thanh Niên để ngắm hoàng hôn trên hồ Trúc Bạch.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

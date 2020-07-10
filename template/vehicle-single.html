@@ -72,12 +72,14 @@
                                 <div class="qty-label">
                                     Qty
                                     <div class="input-number">
-                                        <input type="number" name="quantity" value="1">
+                                        <input type="number" name="quantity" value="1" id="number">
+                                        <!--
                                         <span class="qty-up">+</span>
                                         <span class="qty-down">-</span>
+                                        -->
                                     </div>
                                 </div>
-                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Booking</button>
+                                <button class="add-to-cart-btn" onclick="addCart({{ vehicle.id }})"><i class="fa fa-shopping-cart"></i> Booking</button>
                                 <!--
                                 <input type="hidden" name="productCode" value="{{ vehicle. }}"/>
                                 <input type="hidden" name="sale" value="{{ product.salePrice }}"/>

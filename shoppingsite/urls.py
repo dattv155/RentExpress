@@ -27,6 +27,9 @@ urlpatterns = [
     path('vehicle/', views.vehicle_view, name='vehicle'),
     path('vehicle_single/', views.vehicle_single_view, name='vehicle_single'),
     path('blog/', views.blog_view, name='blog'),
+    path('blog/1', views.blog1_view, name='blog-1'),
+    path('blog/2', views.blog2_view, name='blog-2'),
+    path('blog/3', views.blog3_view, name='blog-3'),
     path('contact/', views.contact_view, name='contact'),
     path('booking/', views.booking_view, name='booking'),
 
@@ -36,6 +39,8 @@ urlpatterns = [
     path('register_ok/', profiles_views.RegisterOkView.as_view(), name='register_ok'),
     path('logout/', profiles_views.SiteLogoutView.as_view(), name='logout'),
     path('profile/', profiles_views.ProfileEditView.as_view(), name='profile'),
+
+    #path('booking/', views.booking_cart, name='booking_cart')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

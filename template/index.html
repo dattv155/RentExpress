@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    {% load static %}
     <div class="hero-wrap" style="background-image: url('static/homepage/images/bg_1.png');"
          data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
@@ -44,53 +45,7 @@
             </div>
         </div>
     </div>
-    <!--
-    <section class="ftco-section">
-        <div class="container">
-            <div class="row">
-                {% for item in object_list %}
-                    <div class="col-md-3">
-                        <div class="car-wrap ftco-animate">
-                            <div class="img d-flex align-items-end"
-                                 style="background-image: url('{{ item.image.url }}');">
-                                <div class="price-wrap d-flex">
-                                    <span class="rate">{{ item.rent_price }}</span>
-                                    <p class="from-day">
-                                        <span>From</span>
-                                        <span>/Day</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="text p-4 text-center">
-                                <h2 class="mb-0"><a href="car-single.html">{{ item.name }}</a></h2>
-                                <span>{{ item.manufacturer }}</span>
-                                <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
-                                    now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-            <!--
-            <div class="row mt-5">
-                <div class="col text-center">
-                    <div class="block-27">
-                        <ul>
-                            <li><a href="#">&lt;</a></li>
-                            <li class="active"><span>1</span></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">&gt;</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            -->
-        </div>
-    </section>
-    -->
+    <br>
     <br>
 <section class="ftco-section services-section ftco-no-pt ftco-no-pb">
     <div class="container">
@@ -148,7 +103,8 @@
         </div>
     </div>
 </section>
-
+    <br>
+    <br>
 <section class="ftco-section services-section img" style="background-image: url(static/homepage/images/bg_2.png);">
     <div class="overlay"></div>
     <div class="container">
@@ -276,6 +232,7 @@
 </section>
 -->
     <br>
+    <br>
 <section class="ftco-section ftco-no-pt ftco-no-pb">
     <div class="container">
         <div class="row no-gutters">
@@ -288,7 +245,7 @@
                     <h2 class="mb-4">Weekly Specials</h2>
 
                     <p>Enjoy your 2020 summer vacation.</p>
-                    <p>Best offer up to 50%</p>
+                    <p>Best offer now!</p>
                     <p><a href="{% url 'vehicle' %}" class="btn btn-primary">Rent Vehicle Now</a></p>
                 </div>
             </div>
@@ -307,49 +264,46 @@
         <div class="row d-flex">
             <div class="col-md-4 d-flex ftco-animate">
                 <div class="blog-entry justify-content-end">
-                    <a href="blog-single.html" class="block-20"
-                       style="background-image: url('static/homepage/images/image_1.jpg');">
+                    <a href="{% url 'blog-1' %}" class="block-20 img"
+                       style="background-image: url('../static/homepage/images/blog-1.jpg');">
                     </a>
-                    <div class="text pt-4">
+                     <div class="text pt-4">
                         <div class="meta mb-3">
-                            <div><a href="#">April. 01, 2020</a></div>
-                            <div><a href="#">Admin</a></div>
-                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 10</a></div>
+                            <div><a href="#">June. 10, 2020</a></div>
+                            <div><a href="#">Trọng Đạt</a></div>
+                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 1</a></div>
                         </div>
-                        <h3 class="heading mt-2"><a href="#">How to choose a car to rent</a></h3>
-                        <p>How to choose a car to rent.</p>
+                        <h3 class="heading mt-2"><a href="{% url 'blog-1' %}">Kinh Nghiệm Cần Lưu Ý Khi Thuê Ô tô Tự Lái</a></h3>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 d-flex ftco-animate">
                 <div class="blog-entry justify-content-end">
-                    <a href="blog-single.html" class="block-20"
-                       style="background-image: url('static/homepage/images/image_2.jpg');">
+                    <a href="{% url 'blog-2' %}" class="block-20 img"
+                       style="background-image: url('../static/homepage/images/blog-2.jpg');">
                     </a>
                     <div class="text pt-4">
                         <div class="meta mb-3">
-                            <div><a href="#">April. 01, 2020</a></div>
-                            <div><a href="#">Admin</a></div>
-                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 15</a></div>
+                            <div><a href="#">June. 12, 2020</a></div>
+                            <div><a href="#">Trọng Đạt</a></div>
+                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                         </div>
-                        <h3 class="heading mt-2"><a href="#">How to choose a motobike to rent</a></h3>
-                        <p>How to choose a motobike to rent.</p>
+                        <h3 class="heading mt-2"><a href="{% url 'blog-2' %}">Kinh nghiệm thuê xe máy đi phượt – Đừng bỏ qua cho dù bạn là dân chuyên</a></h3>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 d-flex ftco-animate">
                 <div class="blog-entry">
-                    <a href="blog-single.html" class="block-20"
-                       style="background-image: url('static/homepage/images/image_3.png');">
+                    <a href="{% url 'blog-3' %}" class="block-20 img"
+                       style="background-image: url('../static/homepage/images/blog-3.jpg');">
                     </a>
                     <div class="text pt-4">
                         <div class="meta mb-3">
-                            <div><a href="#">April. 01, 2020</a></div>
-                            <div><a href="#">Admin</a></div>
-                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 5</a></div>
+                            <div><a href="#">June. 11, 2020</a></div>
+                            <div><a href="#">Trọng Đạt</a></div>
+                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                         </div>
-                        <h3 class="heading mt-2"><a href="#">How to choose a bicycle to rent</a></h3>
-                        <p>How to choose a bicycle to rent.</p>
+                        <h3 class="heading mt-2"><a href="{% url 'blog-3' %}">Đạp xe quanh Hồ Tây Hà Nội – trải nghiệm bạn không nên bỏ lỡ</a></h3>
                     </div>
                 </div>
             </div>

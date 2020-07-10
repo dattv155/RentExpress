@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% load static %}
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('../static/homepage/images/ab_bg_2.jpg');"
+             data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+                <div class="col-md-9 ftco-animate pb-5">
+                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
+                            class="ion-ios-arrow-forward"></i></a></span> <span class="mr-2"><a href="blog.html">Blog <i
+                            class="ion-ios-arrow-forward"></i></a></span> <span>Blog Single <i
+                            class="ion-ios-arrow-forward"></i></span></p>
+                    <h1 class="mb-3 bread">Read our blog</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section ftco-degree-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 order-md-last ftco-animate">
+                    <h1 class="mb-3">Kinh Nghiệm Cần Lưu Ý Khi Thuê Xe Tự Lái</h1>
+                    <h2 class="mb-3 mt-5">1. Xác định mục đích ngay ban đầu khi thuê xe tự lái</h2>
+                    <p>Bạn nên trả lời được câu hỏi “thuê xe để làm gì?” trước khi thuê xe. Để xác định được mục đích
+                        thuê xe và trả lời cho câu hỏi này, bạn nên trả lời cho từng vấn đề cụ thể như: Bạn muốn thuê xe
+                        đi đến đâu? Quãng đường bạn phải di chuyển là bao xa? Địa hình di chuyển như thế nào?
+                        Bạn đi bao lâu? Số lượng người đi? …. Khi đã xác định được mục đích thuê xe tự lái,
+                        bạn sẽ dễ dàng chọn được gói dịch vụ cần thuê và lựa được chiếc xe đúng yêu cầu di chuyển.</p>
+                    <p>
+                        <img src="{% static 'homepage/images/blog-1.1.jpg' %}" alt="" class="img-fluid">
+                    </p>
+                    <h2 class="mb-3 mt-5">2. Lựa chọn dịch vụ thuê xe</h2>
+                    <p>Sau khi xác định được mục đích sử dụng, bước đến là bạn sẽ tìm hiểu và lựa chọn dịch vụ thuê xe
+                        tự lái. Bạn nên tìm hiểu kỹ các yếu tố như:
+                    </p>
+                    <p>
+                        Giá thuê xe: Tham khảo giá thuê xe theo số km hay tính tiền theo ngày? Hình thức đặt cọc
+                        như thế nào (bằng tiền mặt hay đặt cọc bằng tài sản?) Có cần phải thế chấp các thông tin
+                        giấy tờ gì không? Giá tiền phụ trội km là bao nhiêu nếu tính tiền thuê theo số km? (thường
+                        dao động từ 200.000 – 300.000 VND)
+                    </p>
+                    <p>
+                        Tìm hiểu xem đó là xe Công ty hay xe tư nhân: Vì điều này, ảnh hưởng đến chất lượng dịch vụ.
+                        Dù là xe công ty hay tư nhân thì đều có hai mặt của nó. Như thuê xe cá nhân thì các thủ tục
+                        linh hoạt và dễ thỏa thuận hơn, nhưng bạn sẽ không được cung cấp các dịch vụ kèm theo. Nếu bạn
+                        thuê xe công ty thì thủ tục sẽ rườm rà phức tạp hơn 1 chút nhưng được đảm bảo cao hơn, và sẽ có
+                        các dịch vụ kèm theo trong hợp đồng.
+                    </p>
+                    <p>
+                        <img src="{% static 'homepage/images/car-2.jpg' %}" alt="" class="img-fluid">
+                    </p>
+                    <h2 class="mb-3 mt-5">3. Kiểm tra xe là bước cần thiết khi thuê xe tự lái</h2>
+                    <p>Sau khi thỏa thuận xong về các thủ tục thuê và các yêu cầu giấy tờ, bạn nên tiến hành kiểm tra xe.
+                        Nên chạy thử trước khi nhận xe, để xem tình trạng máy móc – cảm nhận trước chiếc xe mình muốn thuê.
+                        Nên lựa chọn những chiếc xe ô tô đời mới, để tránh trường hợp hư hỏng dọc đường do thời gian sử dụng xe lâu.</p>
+                    <p>Kiểm tra xem xe có bị trầy xước, móp vành hoặc các hư hỏng khác nếu có, để thảo luận với chủ xe
+                        trước khi quyết định thuê. Không được quên kiểm tra tình trạng lốp, bánh xe dự phòng và bộ dụng
+                        cụ sửa chữa xe có trên xe hay không? – tránh tình trạng đáng tiếc khi xảy ra. Về máy móc bên
+                        trong, bạn có thể nhờ người có kinh nghiệm kiểm tra, tránh việc rủi ro mất tiền oan.</p>
+                    <p>Khi phát hiện dấu hiệu hư hỏng, trầy xước, bạn phải báo với bên cung cấp dịch vụ để xác nhận.
+                        Kiểm tra và chụp hình số km trên đồng hồ trước khi nhận xe. Bạn đừng quên thêm vào khoản đền bù
+                        khi bên dịch vụ cho thuê xe tự lái mang xe đến muộn, gây chậm trễ kế hoạch của bạn.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

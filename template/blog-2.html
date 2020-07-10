@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% load static %}
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('../static/homepage/images/ab_bg_2.jpg');"
+             data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+                <div class="col-md-9 ftco-animate pb-5">
+                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
+                            class="ion-ios-arrow-forward"></i></a></span> <span class="mr-2"><a href="blog.html">Blog <i
+                            class="ion-ios-arrow-forward"></i></a></span> <span>Blog Single <i
+                            class="ion-ios-arrow-forward"></i></span></p>
+                    <h1 class="mb-3 bread">Read our blog</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section ftco-degree-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 order-md-last ftco-animate">
+                    <h1 class="mb-3">Kinh nghiệm thuê xe máy đi phượt – Đừng bỏ qua cho dù bạn là dân chuyên</h1>
+                    <h2 class="mb-3 mt-5">Chọn thuê xe máy phù hợp</h2>
+                    <p>Lưu ý đầu tiên cần nhớ là bạn phải chọn xe máy phù hợp với đường đi và vừa với dáng người của
+                        mình. Bạn có thể chọn xe số, xe ga, xe côn hoặc xe moto pkl cho hành trình phượt của mình,
+                        tùy vào cung đường đi.</p>
+                    <p>
+                        <img src="{% static 'homepage/images/blog-2.1.jpg' %}" alt="" class="img-fluid">
+                    </p>
+                    <h2 class="mb-3 mt-5">Không chọn bừa đơn vị cho thuê xe </h2>
+                    <p>Không khó để tìm các đơn vị cho thuê xe máy đi phượt ở trên mạng với những lời quảng cáo giá rẻ,
+                        chất lượng, đảm bảo,…nhưng thực tế rất nhiều khách hàng đã nói rằng họ đã từng ngậm trái đắng
+                        khi nghe những lời quảng cáo đó, thuê xe nhưng cuối cùng lại nhận được xe không ra gì.
+                        Nếu có thể, bạn hãy hỏi rõ ý kiến của bạn bè hoặc hỏi trên các diễn đàn về địa chỉ thuê xe máy
+                        uy tín để đi phượt trước khi thuê.
+                    </p>
+                    <p>
+                        <img src="{% static 'homepage/images/blog-2.2.jpg' %}" alt="" class="img-fluid">
+                    </p>
+                    <h2 class="mb-3 mt-5">Kiểm tra kỹ xe trước khi nhận</h2>
+                    <p>Kiểm tra xe máy trước khi nhận là điều không thể bỏ qua, nhất là khi bạn thuê xe với mục đích đi
+                        phượt. Vì cung đường phượt thường sẽ không bằng phẳng và dễ đi như đường thành phố, nếu không
+                        có chiếc xe đảm bảo, bạn rất dễ gặp hỏng hóc và rắc rối trên đường đi. Bạn nên kiểm tra xem lốp
+                        xe có hao mòn quá hay không, hệ thống phanh có đảm bảo không; đèn, còi, gương xe có đầy đủ và
+                        hoặc động tốt hay không. Nếu cẩn thận hơn, bạn có thể khởi động & đi thử xe ngay lúc đó.</p>
+                    <p>
+                        <img src="{% static 'homepage/images/blog-2.3.jpg' %}" alt="" class="img-fluid">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

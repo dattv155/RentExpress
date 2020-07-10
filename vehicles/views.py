@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.template.loader import render_to_string
+from django.http import HttpResponse
 from django.urls import reverse
 from django.views.generic import FormView
 
@@ -56,6 +58,24 @@ def blog_view(request):
     })
 
 
+def blog1_view(request):
+    return render(request, 'blog-1.html', {
+        'nav': 'blog'
+    })
+
+
+def blog2_view(request):
+    return render(request, 'blog-2.html', {
+        'nav': 'blog'
+    })
+
+
+def blog3_view(request):
+    return render(request, 'blog-3.html', {
+        'nav': 'blog'
+    })
+
+
 def contact_view(request):
     return render(request, 'contact.html', {
         'nav': 'contact'
@@ -64,3 +84,14 @@ def contact_view(request):
 
 def booking_view(request):
     return render(request, 'booking.html')
+
+
+def booking_cart(request):
+    html = 'Successfully booking'
+    if request.is_ajax():
+        id = request.POST.get('id')
+        num = request.POST.get('num')
+
+        html = render_to_string('booking.html')
+    return HttpResponse(html)
+
