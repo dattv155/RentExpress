@@ -1,0 +1,43 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 24/07/2019 12:28
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.7af4b0e97742.eot");
+  src: url("./Flaticon.7af4b0e97742.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.5e78214edb3b.woff2") format("woff2"),
+       url("./Flaticon.f431eea0a210.woff") format("woff"),
+       url("./Flaticon.ac5db8f655cc.ttf") format("truetype"),
+       url("./Flaticon.89694a182cfa.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.89694a182cfa.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}
+
+.flaticon-customer-support:before { content: "\f100"; }
+.flaticon-route:before { content: "\f101"; }
+.flaticon-online-booking:before { content: "\f102"; }
+.flaticon-rent:before { content: "\f103"; }
+.flaticon-review:before { content: "\f104"; }
+.flaticon-dashboard:before { content: "\f105"; }
+.flaticon-car-machine:before { content: "\f106"; }
+.flaticon-car-seat:before { content: "\f107"; }
+.flaticon-backpack:before { content: "\f108"; }
+.flaticon-diesel:before { content: "\f109"; }
+.flaticon-select:before { content: "\f10a"; }
